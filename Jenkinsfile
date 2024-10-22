@@ -4,15 +4,13 @@ pipeline {
     tools {nodejs "nodejs"}
     
     stages {
-        stage('Install Dependencies') {
-            steps {
-                script {
-                    withEnv(['PATH+NODEJS=/usr/local/bin']) {
-                        sh 'npm install'
-                    }
-                }
-            }
-        }
+        // stage('Install Dependencies') {
+        //     steps {
+        //             script {
+        //                 sh 'npm i'
+        //             }
+        //     }
+        // }
         
         stage('Run Smoke Tests') {
             steps {
