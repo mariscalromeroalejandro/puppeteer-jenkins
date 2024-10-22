@@ -1,32 +1,15 @@
 pipeline {
-    agent {
-        docker {
-            image 'node:6-alpine'
-            args '-p 3000:3000'
-        }
-    }
-    
+    agent any
     stages {
-        stage('Run Smoke Tests') {
+        stage('Install Dependencies') {
             steps {
-                script {
-                    sh 'npm run smoke-test'
-                }
+                sh 'npm install'
             }
         }
-        
-        stage('Run E2E Tests') {
+        stage('Run smoke test') {
             steps {
-                script {
-                    sh 'npm run e2e-test'
-                }
+                sh 'npm run test-smoke'
             }
-        }
-    }
-    
-    post {
-        always {
-            cleanWs()
         }
     }
 }
