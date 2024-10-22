@@ -4,8 +4,8 @@
 	"description": "CI / CD with puppeteer and jenkins",
 	"main": "index.js",
 	"scripts": {
-		"smoke-test": "./node_modules/mocha/bin/mocha --timeout=3000 ./tests/smoke.test.js",
-		"e2e-test": "./node_modules/mocha/bin/mocha --timeout=3000 ./tests/e2e.test.js"
+		"smoke-test": "./node_modules/mocha/bin/mocha.js --timeout=3000 ./tests/smoke.test.js",
+		"e2e-test": "./node_modules/mocha/bin/mocha.js --timeout=3000 ./tests/e2e.test.js"
 	},
 	"author": "Puppeteer, Jenkins, Automation Builds",
 	"license": "ISC",
